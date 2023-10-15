@@ -19,9 +19,12 @@ resource "aws_subnet" "prod_subnet_1" {
   availability_zone = data.aws_availability_zones.working.names[0]
   cidr_block        = "10.10.1.0/24"
   tags = {
-    Name    = "Subnet-1 in ${data.aws_availability_zones.working.names[0]}"
-    Account = "Subnet in Account ${data.aws_caller_identity.current.account_id}"
-    Region  = data.aws_region.current.description
+    Name      = "Subnet-1 in ${data.aws_availability_zones.working.names[0]}"
+    Account   = "Subnet in Account ${data.aws_caller_identity.current.account_id}"
+    Region    = data.aws_region.current.description
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "fa16b9ab-e5be-4f11-ac5f-714ee621f0ab"
   }
 }
 
@@ -30,9 +33,12 @@ resource "aws_subnet" "prod_subnet_2" {
   availability_zone = data.aws_availability_zones.working.names[1]
   cidr_block        = "10.10.2.0/24"
   tags = {
-    Name    = "Subnet-2 in ${data.aws_availability_zones.working.names[1]}"
-    Account = "Subnet in Account ${data.aws_caller_identity.current.account_id}"
-    Region  = data.aws_region.current.description
+    Name      = "Subnet-2 in ${data.aws_availability_zones.working.names[1]}"
+    Account   = "Subnet in Account ${data.aws_caller_identity.current.account_id}"
+    Region    = data.aws_region.current.description
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "df710d43-c699-4a4f-bd7c-711a3c0cce58"
   }
 }
 

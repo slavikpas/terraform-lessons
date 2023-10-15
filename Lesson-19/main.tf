@@ -68,7 +68,10 @@ resource "aws_instance" "my_default_server" {
   instance_type = "t3.micro"
   ami           = data.aws_ami.defaut_latest_ubuntu.id
   tags = {
-    Name = "Default Server"
+    Name      = "Default Server"
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "68d70d66-d07a-4d7c-8a33-a7a41ece97c7"
   }
 }
 
@@ -77,7 +80,10 @@ resource "aws_instance" "my_usa_server" {
   instance_type = "t3.micro"
   ami           = data.aws_ami.usa_latest_ubuntu.id
   tags = {
-    Name = "USA Server"
+    Name      = "USA Server"
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "8bda6dae-72fe-46d6-b055-0ca3519ad1b5"
   }
 }
 
@@ -86,6 +92,9 @@ resource "aws_instance" "my_ger_server" {
   instance_type = "t3.micro"
   ami           = data.aws_ami.ger_latest_ubuntu.id
   tags = {
-    Name = "GERMANY Server"
+    Name      = "GERMANY Server"
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "90aad79c-471d-454d-a184-f36ca74af2ea"
   }
 }

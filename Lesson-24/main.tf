@@ -27,4 +27,9 @@ resource "google_compute_instance" "my_server" {
   network_interface {
     network = "default"
   }
+  labels = {
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "2e5fa216-3c26-46f9-916c-dd0e064c8ff4"
+  }
 }

@@ -29,14 +29,21 @@ locals {
 resource "aws_vpc" "vpc1" {
   cidr_block = "10.0.0.0/16"
   tags = {
-    Name    = "Stack2-VPC1"
-    Company = local.company_name
-    Owner   = local.owner
+    Name      = "Stack2-VPC1"
+    Company   = local.company_name
+    Owner     = local.owner
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "cfa889a6-3dd7-4c66-93b7-c710961cb51c"
   }
 }
 
 
 resource "aws_vpc" "vpc2" {
   cidr_block = "10.0.0.0/16"
-  tags       = merge(local.common_tags, { Name = "Stack2-VPC2" })
+  tags = merge(local.common_tags, { Name = "Stack2-VPC2" }, {
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "22c519d2-13c2-4165-9091-27fa4b357e77"
+  })
 }

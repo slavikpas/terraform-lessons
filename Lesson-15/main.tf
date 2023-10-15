@@ -53,6 +53,11 @@ resource "aws_instance" "myserver" {
   provisioner "local-exec" {
     command = "echo Hello from AWS Instance Creations!"
   }
+  tags = {
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "d474d404-68c0-4811-91dc-290bb1ccd420"
+  }
 }
 
 
