@@ -54,37 +54,43 @@ sudo service httpd start
 chkconfig httpd on
 EOF
   tags = {
-    Name = "${var.env}-WebServer"
+    Name      = "${var.env}-WebServer"
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "f3766f72-90e0-4e3a-8dd5-5d394f723339"
   }
 }
 
 resource "aws_security_group" "webserver" {
-  name = "WebServer Security Group"
+  name   = "WebServer Security Group"
   vpc_id = data.terraform_remote_state.network.outputs.vpc_id
 
   ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
     cidr_blocks = [data.terraform_remote_state.network.outputs.vpc_cidr]
   }
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = {
-    Name = "${var.env}-web-server-sg"
-    Owner = "Denis Astahov"
+    Name      = "${var.env}-web-server-sg"
+    Owner     = "Denis Astahov"
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "fa0eea88-9299-4f9b-b607-3cd8eb06d55c"
   }
 }
 

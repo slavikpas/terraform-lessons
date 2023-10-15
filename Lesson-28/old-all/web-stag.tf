@@ -13,8 +13,11 @@ chkconfig httpd on
 EOF
 
   tags = {
-    Name  = "STAG WebServer"
-    Owner = "Denis Astahov"
+    Name      = "STAG WebServer"
+    Owner     = "Denis Astahov"
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "791dc31a-ab3f-4a1e-8107-a37012c1f5e5"
   }
 }
 
@@ -38,7 +41,10 @@ resource "aws_security_group" "web-stag" {
   }
 
   tags = {
-    Name  = "Web Server SecurityGroup"
-    Owner = "Denis Astahov"
+    Name      = "Web Server SecurityGroup"
+    Owner     = "Denis Astahov"
+    git_org   = "slavikpas"
+    git_repo  = "terraform-lessons"
+    yor_trace = "c2662f4e-59a1-4869-8f25-eff4c16c3db2"
   }
 }

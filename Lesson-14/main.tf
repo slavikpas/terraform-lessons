@@ -38,5 +38,8 @@ resource "aws_eip" "my_static_ip" {
     city       = local.city
     region_azs = local.az_list
     location   = local.location
+    git_org    = "slavikpas"
+    git_repo   = "terraform-lessons"
+    yor_trace  = "58db7208-74e7-4ddd-9ea9-ba1d321e25ec"
   }
 }
